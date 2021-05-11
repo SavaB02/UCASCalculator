@@ -1,0 +1,86 @@
+Public Class frmCalculate
+    Dim P As Decimal            'declaring new variables as decimal
+    Dim M As Decimal
+    Dim D As Decimal
+    Dim Result As Decimal
+    Private Sub frmCalculate_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        pbx90Table.Hide()
+        lbl90Table.Hide()       'Hiding some labels and picture boxes once this form is launched
+        pbx180Table.Hide()
+        lbl180Table.Hide()
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtP.TextChanged
+        'Declaring that every value that will be written in txtP textbox will be P value
+        P = Val(txtP.Text)
+    End Sub
+
+    Private Sub txtM_TextChanged(sender As Object, e As EventArgs) Handles txtM.TextChanged
+        'Declaring that every value that will be written in txtM textbox will be M value
+        M = Val(txtM.Text)
+    End Sub
+
+    Private Sub txtD_TextChanged(sender As Object, e As EventArgs) Handles txtD.TextChanged
+        'Declaring that every value that will be written in txtD textbox will be D value
+        D = Val(txtD.Text)
+    End Sub
+
+    Private Sub btnCal_Click(sender As Object, e As EventArgs) Handles btnCal.Click
+        If cmbQual.SelectedIndex = 0 Then
+            If P + M + D <> 9 Then
+                Me.Hide()
+                frmAmountError.Show()
+                txtP.Clear()
+                txtM.Clear()
+                txtD.Clear()
+            End If
+        ElseIf cmbQual.SelectedIndex = 1 Then
+            If P + M + D <> 18 Then
+                Me.Hide()
+                frmAmountError2.Show()
+                txtP.Clear()
+                txtM.Clear()
+                txtD.Clear()
+            End If
+        End If
+        'Coding a formula for Result calculations
+        Result = P * 70 + M * 80 + D * 90
+        lblResult.Text = Result 'Displaying the result in the specific label
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        'setting all values to 0 and clearing variables
+        txtP.Clear()
+        txtM.Clear()
+        txtD.Clear()
+        lblResult.Text = 0
+    End Sub
+
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+        'Hiding current window and showing main menu
+        Me.Hide()
+        frmMain.Show()
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles pbx90Table.Click
+
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbQual.SelectedIndexChanged
+        If cmbQual.SelectedIndex = 0 Then       'when user select 1st item from combo box label and table appears
+            pbx90Table.Show()
+            lbl90Table.Show()       'Hiding other label and table if other is selected
+            pbx180Table.Hide()
+            lbl180Table.Hide()
+        ElseIf cmbQual.SelectedIndex = 1 Then   'when user select 2nd item from combo box label and table appears
+            pbx180Table.Show()
+            lbl180Table.Show()
+            pbx90Table.Hide()       'Hiding other label and table if other is selected
+            lbl90Table.Hide()
+        End If
+    End Sub
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        frmWIP.Show()
+    End Sub
+End Class
