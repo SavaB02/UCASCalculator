@@ -1,0 +1,25 @@
+Public Class frmMain
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles benExit.Click
+        'Close the application
+        Me.Close()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnCalculate.Click
+        'Hide current screen and display another
+        frmCalculate.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btnSettings_Click(sender As Object, e As EventArgs) Handles btnSettings.Click
+        'Hide current screen and display another
+        frmSettings.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
+        'Hide current screen and display another
+        frmDescription.Show()
+        Me.Hide()
+    End Sub
+End Class
