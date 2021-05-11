@@ -1,0 +1,57 @@
+Public Class frmSettings
+    Private Sub ckbFont_CheckedChanged(sender As Object, e As EventArgs) Handles ckbFont.CheckedChanged
+
+    End Sub
+
+    Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+        'Hide current screen and display another
+        Me.Hide()
+        frmMain.Show()
+    End Sub
+
+    Private Sub ckbBgdC_CheckedChanged(sender As Object, e As EventArgs) Handles ckbBgdC.CheckedChanged
+        'if checked then eneble the colour change group
+        'if unchecked then disable the colour change group
+        If ckbBgdC.Checked Then
+            grpBgdC.Enabled = True
+        Else
+            grpBgdC.Enabled = False
+        End If
+    End Sub
+
+    Private Sub rdbDefault_CheckedChanged(sender As Object, e As EventArgs) Handles rdbDefault.CheckedChanged
+        'Changing background colour for all screens
+        Me.BackColor = DefaultBackColor
+        frmCalculate.BackColor = DefaultBackColor
+        frmMain.BackColor = DefaultBackColor
+        frmAmountError.BackColor = DefaultBackColor
+        frmAmountError2.BackColor = DefaultBackColor
+    End Sub
+
+    Private Sub rdbGrey_CheckedChanged(sender As Object, e As EventArgs) Handles rdbGray.CheckedChanged
+        'Changing background colour for all screens
+        Me.BackColor = Color.Gray
+        frmCalculate.BackColor = Color.Gray
+        frmAmountError.BackColor = Color.Gray
+        frmAmountError2.BackColor = Color.Gray
+        frmMain.BackColor = Color.Gray
+    End Sub
+
+    Private Sub rdbBlue_CheckedChanged(sender As Object, e As EventArgs) Handles rdbOrange.CheckedChanged
+        'Changing background colour for all screens
+        Me.BackColor = Color.Coral
+        frmCalculate.BackColor = Color.Coral
+        frmAmountError.BackColor = Color.Coral
+        frmAmountError2.BackColor = Color.Coral
+        frmMain.BackColor = Color.Coral
+    End Sub
+
+    Private Sub rdbYellow_CheckedChanged(sender As Object, e As EventArgs) Handles rdbCyan.CheckedChanged
+        'Changing background colour for all screens
+        Me.BackColor = Color.Cyan
+        frmCalculate.BackColor = Color.Cyan
+        frmAmountError.BackColor = Color.Cyan
+        frmAmountError2.BackColor = Color.Cyan
+        frmMain.BackColor = Color.Cyan
+    End Sub
+End Class
