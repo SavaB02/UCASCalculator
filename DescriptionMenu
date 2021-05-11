@@ -1,0 +1,34 @@
+Public Class frmDescription
+    Private Sub Back_Click(sender As Object, e As EventArgs) Handles Back.Click
+        'Hide current screen and display another
+        Me.Hide()
+        frmMain.Show()
+    End Sub
+
+End Class
+
+Error 1 screen
+Public Class frmAmountError
+    Private Sub btnOk_Click(sender As Object, e As EventArgs) Handles btnOk.Click
+        'Hide current screen and display another
+        Me.Hide()
+        frmCalculate.Show()
+    End Sub
+End Class
+
+Error 2 screen
+Public Class frmAmountError2
+    Private Sub btnOk_Click(sender As Object, e As EventArgs) Handles btnOk.Click
+        'Hide current screen and display another
+        Me.Hide()
+        frmCalculate.Show()
+    End Sub
+
+End Class
+
+Work in progress (WIP) screen
+Public Class frmWIP
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Me.Close()
+    End Sub
+End Class
